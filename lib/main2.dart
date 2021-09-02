@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'package:website_sept/LandingPage/AboutPage.dart' as eos;
+import 'package:website_sept/Navbar/Navbar.dart';
+
+class MyHomePage2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.black,
+        ),
+        child: RawScrollbar(
+          thumbColor: Colors.green,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Lottie.asset('assets/lottiefile.json'),
+                Navbar(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 40.0),
+                  child: eos.AboutPage(),
+                ),
+                SizedBox(height: 10,),
+                Text("Sahil Saleem © 2021", style: TextStyle(fontSize: 16.0, color: Colors.green),),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
